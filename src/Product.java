@@ -1,7 +1,7 @@
 public class Product {
 
     private String name;
-    private int upcCode;
+    private long upcCode;
     private double price;
 
     @Override
@@ -21,7 +21,7 @@ public class Product {
         this.name = name;
     }
 
-    public int getUpcCode() {
+    public long getUpcCode() {
         return upcCode;
     }
 
@@ -37,7 +37,7 @@ public class Product {
         this.price = price;
     }
 
-    public Product(String name, int upcCode, double price) {
+    public Product(String name, long upcCode, double price) {
         this.name = name;
         this.upcCode = upcCode;
         this.price = price;

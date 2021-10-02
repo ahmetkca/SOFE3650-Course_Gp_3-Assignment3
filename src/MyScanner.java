@@ -1,8 +1,8 @@
-public class Scanner {
+public class MyScanner {
 
     private final CashRegister cashRegister; // Model
 
-    public Scanner(CashRegister cashRegister) {
+    public MyScanner(CashRegister cashRegister) {
         this.cashRegister = cashRegister;
 
     }
