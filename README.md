@@ -2,11 +2,11 @@
  
  # Table of Contents
 
-1. [**Test Method One Modifications**](/srcMethod1)
+1. [**Method One**](/srcMethod1)
 
-2. [**Test Method Two Modifications**](/srcMethod2)
+2. [**Method Two**](/srcMethod2)
 
-3. [**Test Method Three Modifications**](/srcMethod3)
+3. [**Method Three**](/srcMethod3)
 
 4. [**Comparative Statements and Analysis**](/Comparsion.txt)
    
