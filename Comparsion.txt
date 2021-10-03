@@ -1,0 +1,21 @@
+Method 1: Standard implementation 
+Advantages:
+  Provides the usser an interface (scanner/ keyboard) which utilizes the cash register to display the out put which correlates to the entired inputs. Has multiple input methods
+  which provides covrage for input errors.
+Disadvantages:
+  Heavily relies on the cash register for all primary functions.
+  
+Method 2: TicketPrinter and Display inherit view interface. 
+Advantages:
+  Adds a uniform intrface for displaying product information using the display and ticket printer.
+Disadvantages:
+  
+  
+Method 3: TicketPrinter and Display act as observers of CashRegister.
+Advantages:
+  Increases coherancy of TicketPrinter/ Display with the CashRegister, betteer utilizes the display to update with the most current purchase iteams.  
+disadvantages:
+  type here.
+  
+ Conclusion:
+  In clonclusion method 2 and 3 add valuable traits to the cash register program which increases its usability and reliability. 
