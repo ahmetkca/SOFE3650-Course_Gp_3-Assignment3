@@ -39,11 +39,9 @@ public class MainApp {
                 proUpcCode = sc.nextLong();
                 keyboard.setUpcCode(proUpcCode);
             } else if (inputChoice == 2) {
-                System.out.println("Scan product's upc code: ");
-                proUpcCode = sc.nextLong();
-                scanner.scannedUPCCode(proUpcCode);
+                scanner.scannedUPCCode();
             } else {
-                System.out.println("Enter between 1 and 3 continues...");
+                System.out.println("Please Enter a Number between 1 and 3...");
                 continue;
             }
             cashRegister.getCurrentProductInfo();

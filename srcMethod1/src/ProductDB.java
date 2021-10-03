@@ -19,6 +19,10 @@ public class ProductDB {
         }
     }
 
+    public ArrayList<Product> getDB(){
+        return this.db;
+    }
+
     public Product getProductInfo(long upcCode) {
         Product foundProduct = null;
         for (Product product: db) {
