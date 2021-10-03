@@ -8,7 +8,7 @@ public class MyScanner {
     }
 
     public void scannedUPCCode(long upcCode) {
-        cashRegister.setCurrentProductUPC(upcCode);
+        cashRegister.setCurrentProductUPC(cashRegister.processScanner());
 
     }
 }
