@@ -2,18 +2,24 @@ public class CashRegister {
 
     private final ProductDB productDb;
     private long currentUpcCode;
-    private final Display display;
-    private final TicketPrinter ticketPrinter;
+    private View view;
 
-    public CashRegister(Display display, TicketPrinter ticketPrinter) {
+    public CashRegister(View view) {
         productDb = new ProductDB();
         currentUpcCode = -1;
-        this.display = display;
-        this.ticketPrinter = ticketPrinter;
+        this.view = view;
+    }
+
+    public void setView(View view){
+        this.view = view;
     }
 
     public void setCurrentProductUPC(long upcCode) {
         currentUpcCode = upcCode;
+    }
+
+    public void processScanner(){
+
     }
 
     public void getCurrentProductInfo() {
@@ -22,8 +28,7 @@ public class CashRegister {
             pro = productDb.getProductInfo(currentUpcCode);
         }
         if (pro != null) {
-            display.displayProduct(pro);
-            ticketPrinter.displayProduct(pro);
+            view.displayProduct(pro);
         } else {
             System.out.println("Product with given UPC Code " + currentUpcCode + " could not found in the ProductDB!");
         }

@@ -13,7 +13,7 @@ public class MainApp {
         sc = new Scanner(System.in);
         display = new Display();
         ticketPrinter = new TicketPrinter();
-        cashRegister = new CashRegister(display, ticketPrinter);
+        cashRegister = new CashRegister(display);
         keyboard = new Keyboard(cashRegister);
         scanner = new MyScanner(cashRegister);
     }
@@ -44,7 +44,21 @@ public class MainApp {
                 System.out.println("upc code scanned: 100000000001 ");
                 scanner.scannedUPCCode(proUpcCode);
             } else {
-                System.out.println("Enter between 1 and 3 continues...");
+                System.out.println("Please Enter a Number between 1 and 3...");
+                continue;
+            }
+            System.out.println("Choose how you would like to view the product info: ");
+            System.out.println("1 - Display");
+            System.out.println("2 - Ticket");
+            inputChoice = sc.nextInt();
+            if(inputChoice == 1) {
+                cashRegister.setView(display);
+            }
+            else if (inputChoice == 2){
+                cashRegister.setView(ticketPrinter);
+            }
+            else {
+                System.out.println("Please Enter a Number between 1 and 3...");
                 continue;
             }
             cashRegister.getCurrentProductInfo();
