@@ -1,3 +1,4 @@
+package src;
 public class MyScanner {
 
     private final CashRegister cashRegister; // Model
