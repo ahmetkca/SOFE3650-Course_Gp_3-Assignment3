@@ -1,3 +1,4 @@
+package src;
 public class TicketPrinter {
     public list<String> products = new LinkedList<String>(); 
     public TicketPrinter() {
@@ -9,8 +10,8 @@ public class TicketPrinter {
         System.out.println(text);
     }
 
-    public void ticketBuilder(String product){
-        products.add(product);
+    public void ticketBuilder(String text){
+        products.add(text);
     }
 
     public void displayTicket(){
