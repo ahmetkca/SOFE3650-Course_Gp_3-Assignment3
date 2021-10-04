@@ -2,9 +2,9 @@ package src;
 import java.util.*;
 
 public class TicketPrinter {
-   
+    public LinkedList<String> list=new LinkedList<String>();
     public TicketPrinter() {
-        LinkedList<String> list=new LinkedList<String>(); 
+         
     }
 
     public void displayText(String text) {//subsrciber method,  waits for nottification of product input and reacts to it 
