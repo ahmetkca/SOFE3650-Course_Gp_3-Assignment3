@@ -44,7 +44,7 @@ public class MainApp {
                 scanner.scannedUPCCode();
             } else if (inputChoice == 3){
                 System.out.println("your order summrey is: ");
-                CashRegister.getTicket();
+                TicketPrinter.displayTicket();
             } else {
                 System.out.println("Please Enter a Number between 1 and 3...");
                 continue;
