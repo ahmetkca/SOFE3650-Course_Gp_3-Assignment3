@@ -1,3 +1,4 @@
+package src;
 2import java.util.Scanner;
 
 public class MainApp {
