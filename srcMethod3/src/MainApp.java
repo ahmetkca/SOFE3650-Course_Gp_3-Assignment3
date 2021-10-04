@@ -1,5 +1,5 @@
 package src;
-2import java.util.Scanner;
+import java.util.Scanner;
 
 public class MainApp {
 
@@ -44,7 +44,7 @@ public class MainApp {
                 scanner.scannedUPCCode();
             } else if (inputChoice == 3){
                 System.out.println("your order summrey is: ");
-                CashRegister.showTicket();
+                CashRegister.getTicket();
             } else {
                 System.out.println("Please Enter a Number between 1 and 3...");
                 continue;
