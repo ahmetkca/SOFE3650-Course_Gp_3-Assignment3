@@ -65,7 +65,7 @@ public class CashRegister {
         }
     }
 
-    public void showTicket(){
+    public void getTicket(){
             ticketPrinter.displayTicket();
     }
 }
