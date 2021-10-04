@@ -1,8 +1,10 @@
 package src;
-public class TicketPrinter {
-    public list<String> products = new LinkedList<String>(); 
-    public TicketPrinter() {
+import java.util.*;
 
+public class TicketPrinter {
+   
+    public TicketPrinter() {
+        LinkedList<String> list=new LinkedList<String>(); 
     }
 
     public void displayText(String text) {//subsrciber method,  waits for nottification of product input and reacts to it 
@@ -11,10 +13,10 @@ public class TicketPrinter {
     }
 
     public void ticketBuilder(String text){
-        products.add(text);
+        list.add(text);
     }
 
     public void displayTicket(){
-        System.out.println(products.toString());
+        System.out.println(list.toString());
     }
 }
