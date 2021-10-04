@@ -1,3 +1,4 @@
+package src;
 public class Keyboard {
 
     private final CashRegister cashRegister; // Model
