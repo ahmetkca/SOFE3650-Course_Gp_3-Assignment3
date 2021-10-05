@@ -20,8 +20,7 @@ public class CashRegister {
 
     public void setCurrentProductUPC(long upcCode) {//publisher method
         currentUpcCode = upcCode;
-        System.out.println("Iteam Sent To Display");
-        getCurrentProductInfo();//nottifys printter and scanner that a product change has happend acts as publisher
+        publisher();//nottifys printter and scanner that a product change has happend acts as publisher
     }
 
     public long processScanner(){
@@ -52,17 +51,31 @@ public class CashRegister {
         return upc;
     }
 
+    public void publisher(){
+        Product pro = null;
+        if (currentUpcCode != -1) {
+            pro = productDb.getProductInfo(currentUpcCode);
+        }
+        if (pro != null) {
+            display.notifyText(pro.toString());
+            ticketPrinter.notifyText(pro.toString());
+        } else {
+            System.out.println("Product with given UPC Code " + currentUpcCode + " could not found in the ProductDB!");
+        }
+    }
     public void getCurrentProductInfo() {
         Product pro = null;
         if (currentUpcCode != -1) {
             pro = productDb.getProductInfo(currentUpcCode);
         }
         if (pro != null) {
+            System.out.println("Publification Sent Succesfully");
             display.displayText(pro.toString());
             ticketPrinter.displayText(pro.toString());
         } else {
             System.out.println("Product with given UPC Code " + currentUpcCode + " could not found in the ProductDB!");
         }
     }
+    
 
 }
