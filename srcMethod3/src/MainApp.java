@@ -31,10 +31,9 @@ public class MainApp {
             System.out.println("Choose input device: ");
             System.out.println("1 - Keyboard");
             System.out.println("2 - Scanner");
-            System.out.println("3 - View Order");
-            System.out.println("4 - exit");
+            System.out.println("3 - exit");
             inputChoice = sc.nextInt();
-            if (inputChoice == 4) {
+            if (inputChoice == 3) {
                 System.exit(1);
             } else if (inputChoice == 1) {
                 System.out.println("Enter product's upc code manually: ");
@@ -42,14 +41,11 @@ public class MainApp {
                 keyboard.setUpcCode(proUpcCode);
             } else if (inputChoice == 2) {
                 scanner.scannedUPCCode();
-            } else if (inputChoice == 3){
-                System.out.println("your order summrey is: ");
-                TicketPrinter.displayTicket();
             } else {
                 System.out.println("Please Enter a Number between 1 and 3...");
                 continue;
             }
-            
+            cashRegister.getCurrentProductInfo();
         } while (inputChoice != 0);
 
     }
