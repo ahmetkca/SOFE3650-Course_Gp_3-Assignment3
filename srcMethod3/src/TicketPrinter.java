@@ -1,8 +1,8 @@
 package src;
-import java.util.*;
+
 
 public class TicketPrinter {
-    public LinkedList<String> list=new LinkedList<String>();
+   
     public TicketPrinter() {
          
     }
@@ -12,11 +12,4 @@ public class TicketPrinter {
         System.out.println(text);
     }
 
-    public void ticketBuilder(String text){
-        list.add(text);
-    }
-
-    public void displayTicket(){
-        System.out.println(list.toString());
-    }
 }
