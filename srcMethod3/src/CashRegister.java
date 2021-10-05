@@ -20,6 +20,7 @@ public class CashRegister {
 
     public void setCurrentProductUPC(long upcCode) {//publisher method
         currentUpcCode = upcCode;
+        System.out.println("Iteam Sent To Display");
         getCurrentProductInfo();//nottifys printter and scanner that a product change has happend acts as publisher
     }
 
@@ -59,13 +60,9 @@ public class CashRegister {
         if (pro != null) {
             display.displayText(pro.toString());
             ticketPrinter.displayText(pro.toString());
-            ticketPrinter.ticketBuilder(pro);
         } else {
             System.out.println("Product with given UPC Code " + currentUpcCode + " could not found in the ProductDB!");
         }
     }
 
-    public void getTicket(){
-            ticketPrinter.displayTicket();
-    }
 }
