@@ -8,8 +8,14 @@ public class MyScanner {
 
     }
 
-    public void scannedUPCCode() {
+    public void scannedUPCCode(int id) {
+        if(id==1){//applie observer
+        double discount=0.5;
         cashRegister.setCurrentProductUPC(cashRegister.processScanner());
+        }
+        else{
+        cashRegister.setCurrentProductUPC(cashRegister.processScanner());
+        }
 
     }
 }
