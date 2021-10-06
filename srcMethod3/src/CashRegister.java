@@ -9,6 +9,7 @@ public class CashRegister {
     private final Display display;
     private final TicketPrinter ticketPrinter;
     private final Scanner sc;
+    ArrayList<Observer>	ol;
 
     public CashRegister(Display display, TicketPrinter ticketPrinter) {
         productDb = new ProductDB();
@@ -62,4 +63,10 @@ public class CashRegister {
             System.out.println("Product with given UPC Code " + currentUpcCode + " could not found in the ProductDB!");
         }
     }
+    public void update(double diss) {
+		
+		double discountVal=diss;
+        System.out.println("you have added a "+(discountVal*100)+" to your account");
+
+	} 
 }
