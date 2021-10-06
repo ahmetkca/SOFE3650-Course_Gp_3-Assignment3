@@ -27,6 +27,9 @@ public class MainApp {
     public void runApp() {
         long proUpcCode;
         int inputChoice = 1;
+        System.out.println("enter employee ID (use 1 for discount)");
+        int id=0;
+        id=sc.nextInt();
         do {
             System.out.println("Choose input device: ");
             System.out.println("1 - Keyboard");
@@ -40,7 +43,7 @@ public class MainApp {
                 proUpcCode = sc.nextLong();
                 keyboard.setUpcCode(proUpcCode);
             } else if (inputChoice == 2) {
-                scanner.scannedUPCCode();
+                scanner.scannedUPCCode(id);
             } else {
                 System.out.println("Please Enter a Number between 1 and 3...");
                 continue;
