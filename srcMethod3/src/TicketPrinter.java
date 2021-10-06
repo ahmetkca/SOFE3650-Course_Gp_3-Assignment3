@@ -12,8 +12,5 @@ public class TicketPrinter {
         System.out.println(text);
     }
 
-    public void notifyText(String text){//subscriber method, waits for nottification of product input and reacts to it
-        System.out.print("Subscription Recived by Printer, ");
-        System.out.println(text + " was order");
-    }
+    
 }
