@@ -1,9 +1,8 @@
-package src;
 public class Keyboard {
 
     private final CashRegister cashRegister; // Model
 
-    public Keyboard(CashRegister cashRegister ) {
+    public Keyboard(CashRegister cashRegister) {
         this.cashRegister = cashRegister;
     }
 

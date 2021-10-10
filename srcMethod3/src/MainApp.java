@@ -1,4 +1,3 @@
-package src;
 import java.util.Scanner;
 
 public class MainApp {
@@ -14,7 +13,9 @@ public class MainApp {
         sc = new Scanner(System.in);
         display = new Display();
         ticketPrinter = new TicketPrinter();
-        cashRegister = new CashRegister(display, ticketPrinter);
+        cashRegister = new CashRegister();
+        cashRegister.subscribe(display);
+        cashRegister.subscribe(ticketPrinter);
         keyboard = new Keyboard(cashRegister);
         scanner = new MyScanner(cashRegister);
     }
@@ -26,10 +27,7 @@ public class MainApp {
 
     public void runApp() {
         long proUpcCode;
-        int inputChoice = 1;
-        System.out.println("enter employee ID (use 1 for discount)");
-        int id=0;
-        id=sc.nextInt();
+        int inputChoice = 0;
         do {
             System.out.println("Choose input device: ");
             System.out.println("1 - Keyboard");
@@ -43,7 +41,7 @@ public class MainApp {
                 proUpcCode = sc.nextLong();
                 keyboard.setUpcCode(proUpcCode);
             } else if (inputChoice == 2) {
-                scanner.scannedUPCCode(id);
+                scanner.scannedUPCCode();
             } else {
                 System.out.println("Please Enter a Number between 1 and 3...");
                 continue;

@@ -1,4 +1,3 @@
-package src;
 public class MyScanner {
 
     private final CashRegister cashRegister; // Model
@@ -8,8 +7,7 @@ public class MyScanner {
 
     }
 
-    public void scannedUPCCode(int id) {
-        
+    public void scannedUPCCode() {
         cashRegister.setCurrentProductUPC(cashRegister.processScanner());
 
     }

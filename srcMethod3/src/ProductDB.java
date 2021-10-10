@@ -1,4 +1,3 @@
-package src;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -13,7 +12,7 @@ public class ProductDB {
         for (int i = 0; i < SIZE; i++) {
             Random random = new Random();
             db.add(new Product(
-                    "Product " + i,
+                    "Product " + (i + 1),
                     START_UPC_CODE + i+1,
                     (i + 1) * random.nextInt(10)
             ));

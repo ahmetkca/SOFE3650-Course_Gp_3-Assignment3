@@ -1,21 +1,15 @@
-package src;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CashRegister {
+public class CashRegister extends Publisher {
 
     private final ProductDB productDb;
     private long currentUpcCode;
-    private final Display display;
-    private final TicketPrinter ticketPrinter;
     private final Scanner sc;
-    ArrayList<Observer>	ol;
 
-    public CashRegister(Display display, TicketPrinter ticketPrinter) {
+    public CashRegister() {
         productDb = new ProductDB();
         currentUpcCode = -1;
-        this.display = display;
-        this.ticketPrinter = ticketPrinter;
         sc = new Scanner(System.in);
     }
 
@@ -57,16 +51,26 @@ public class CashRegister {
             pro = productDb.getProductInfo(currentUpcCode);
         }
         if (pro != null) {
-            display.displayText(pro.toString());
-            ticketPrinter.displayText(pro.toString());
+            this.notify(pro.toString());
         } else {
             System.out.println("Product with given UPC Code " + currentUpcCode + " could not found in the ProductDB!");
         }
     }
-    public void update(double diss) {
-		
-		double discountVal=diss;
-        System.out.println("you have added a "+(discountVal*100)+" to your account");
 
-	} 
+    @Override
+    public void subscribe(Subscriber subsrcriber) {
+        subscribers.add(subsrcriber);
+    }
+
+    @Override
+    public void unsubscribe(Subscriber subsrcriber) {
+        subscribers.remove(subsrcriber); 
+    }
+
+    @Override
+    public void notify(String text) {
+        for (Subscriber subscriber : subscribers) {
+            subscriber.update(text);
+        }
+    }
 }
